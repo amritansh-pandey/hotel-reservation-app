@@ -1,11 +1,24 @@
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
+import Home from "./pages/Home/Home";
+import List from "./pages/List/List";
+import Hotel from "./pages/Hotel/Hotel";
 
 function App() {
   return (
-    <div>
-      <h1>Hello World
-      </h1>
-    </div>
+    <BrowserRouter>
+    <Routes>
+    <Route path="/" element={<Home/>} />
+    <Route path="/hotel-listing" element={<List/>} />
+    <Route path="/hotel-detail/:id" element={<Hotel/>} />
+    </Routes>
+    
+    </BrowserRouter>
+   
   );
 }
 
